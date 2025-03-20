@@ -1,0 +1,18 @@
+p {
+  /* 字体颜色为茶色 */
+  color: maroon;
+}
+h1,h2 {
+  color:grey ;
+  /* border-bottom: 1px solid black;*/
+}
+h1 {
+  border-bottom: 1px solid black;
+}
+body {
+  font-family: Arial;
+  font-size: 1.5em;
+}
+em {
+  font-family: "Cascadia Mono";
+}
