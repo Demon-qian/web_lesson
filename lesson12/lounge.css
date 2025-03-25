@@ -22,3 +22,17 @@ em {
 html {
   font-size: 15px;
 }
+body{
+  /* 按名称 */
+	color: mediumaquamarine;
+	color: rgb(254, 204, 17);
+	color: #FECC11;
+	color: rgba(39,177,182,0.8);
+	color: #eb507e;
+}
+p {
+  font-style: italic;
+}
+html {
+  text-decoration: none;
+}
