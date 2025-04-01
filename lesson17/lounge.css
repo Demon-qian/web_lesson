@@ -31,4 +31,6 @@ h2 {
 	background-repeat: no-repeat;
 	background-position: top left;
 	margin-right: 250px;
+	border-top-right-radius:  15px;
+	border-bottom-left-radius: 15px  ;
 }
