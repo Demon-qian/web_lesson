@@ -1,0 +1,225 @@
+ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+li {
+  margin: 5px 0;
+}
+.highlight {
+  font-weight: bold;
+  color: red;
+}
+/* maogai.css */
+body {
+  font-family: 'Segoe UI', '微软雅黑', sans-serif;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 24px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 25px;
+  padding: 10px;
+  background-color: #f0f3f5;
+  border-radius: 4px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+ul ul {
+  padding-left: 30px;
+  border-left: 2px solid #ecf0f1;
+  margin: 8px 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 8px 15px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+  position: relative;
+}
+
+li:before {
+  content: "•";
+  color: #3498db;
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.highlight {
+  background-color: #e8f4ff;
+  border-left: 4px solid #3498db;
+  padding-left: 11px; /* 补偿左边框宽度 */
+  margin-left: -4px; /* 保持对齐 */
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+/* 章节标题样式 */
+li > ul {
+  margin-top: 8px;
+}
+
+li:first-child {
+  margin-top: 0;
+}
+
+li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  body {
+      padding: 15px;
+  }
+  
+  h1 {
+      font-size: 20px;
+  }
+  
+  li {
+      font-size: 14px;
+  }
+}
+/* 新增CSS样式补充 */
+.chapter-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.chapter-links a {
+  padding: 12px;
+  background: #e8f4ff;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  color: #2c3e50;
+  transition: all 0.3s;
+}
+
+.chapter-links a:hover {
+  background: #3498db;
+  color: white;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.nav-bar a {
+  padding: 8px 16px;
+  background: #3498db;
+  color: white;
+  border-radius: 4px;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.qa-box {
+  margin: 20px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.question {
+  font-weight: 600;
+  color: #2c3e50;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ecf0f1;
+  margin-bottom: 15px;
+}
+
+.answer {
+  line-height: 1.8;
+  color: #4a5568;
+}
+
+.answer ol, .answer ul {
+  padding-left: 25px;
+  margin: 10px 0;
+}
+
+.answer li {
+  margin: 8px 0;
+  background: none;
+  padding: 0;
+  box-shadow: none;
+}
+a{
+  text-decoration: none;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 40px;
+  margin: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #3498db;
+}
+
+.event {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 30px;
+}
+
+.event::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background: #3498db;
+  border-radius: 50%;
+}
+
+.date {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.desc {
+  padding: 8px 12px;
+  background: #f0f3f5;
+  border-radius: 4px;
+  margin-top: 5px;
