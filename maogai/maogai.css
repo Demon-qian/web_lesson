@@ -1,14 +1,3 @@
-ul {
-  list-style-type: none;
-  padding-left: 20px;
-}
-li {
-  margin: 5px 0;
-}
-.highlight {
-  font-weight: bold;
-  color: red;
-}
 /* maogai.css */
 body {
   font-family: 'Segoe UI', '微软雅黑', sans-serif;
@@ -176,10 +165,81 @@ li:hover {
   padding: 0;
   box-shadow: none;
 }
-a{
-  text-decoration: none;
+/* 表格样式 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+th {
+  background-color: #3498db;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* 引用块样式 */
+blockquote {
+  margin: 15px 0;
+  padding: 15px 25px;
+  background: #f0f3f5;
+  border-left: 4px solid #3498db;
+  color: #4a5568;
+  font-style: italic;
+}
+
+/* 标记文本样式 */
+mark {
+  background-color: #fff3cd;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* 响应式表格 */
+@media (max-width: 600px) {
+  table {
+      display: block;
+      overflow-x: auto;
+  }
+}
+/* 新增CSS样式（追加到maogai.css） */
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.col {
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.col h4 {
+  color: #3498db;
+  margin-top: 0;
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .columns {
+      grid-template-columns: 1fr;
+  }
+}
+/* 新增时间轴样式（追加到maogai.css） */
 .timeline {
   position: relative;
   padding-left: 40px;
@@ -223,3 +283,4 @@ a{
   background: #f0f3f5;
   border-radius: 4px;
   margin-top: 5px;
+}
