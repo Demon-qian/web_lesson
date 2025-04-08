@@ -76,3 +76,10 @@ a {
 	background: #f88396;
 	color: #0d5353;
 }
+
+p#test {
+	color: #007e7e;
+}
+p.test {
+	color: #d12c47;
+}
