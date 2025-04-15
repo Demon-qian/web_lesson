@@ -15,10 +15,16 @@
   border:thin solid lightsteelblue;
 }
 .child {
+  position: absolute;
   width: 10vw;
   height: 5vw;
   margin: 5px;
   padding: 5px;
   background-color:navy;
   color: white;
+}
+.move {
+  position: absolute;
+  top: -20px;
+  left: 20px;
 }
