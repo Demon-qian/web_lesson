@@ -167,3 +167,6 @@ nav ul li.selected {
 	background-color:#b5a789;
 }
 
+video {
+  display: inline-block;
+}
