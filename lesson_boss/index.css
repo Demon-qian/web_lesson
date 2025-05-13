@@ -7,32 +7,102 @@ section {
   background-color: rgb(60, 59, 59);
 }
 .Black_Box_Title_Frist{
-  display: inline-flex;
+  display: inline-flex;/* 使元素在同一行内显示 */
 }
 
 .Black_Box_Title_Second{
-  display: inline-flex;
+  display: inline-flex;/* 使元素在同一行内显示 */
 }
 
 img{
   width: 300px;
 }
 p {
-  display: inline-block;
+  display: inline-block;/* 使元素在同一行内显示 */
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;/* 调整元素之间的间距 */
+}
+
+.game-list {
+  display: flex;
+  flex-wrap: wrap;/* 允许元素换行 */
+  justify-content: center;/* 水平居中 */
+  gap: 24px 20px; /* 行间距24px，列间距20px，可根据实际调整 */
+  margin-top: 32px;/* 调整顶部间距 */
+  margin-bottom: 32px;/* 调整底部间距 */
 }
 
 .game-item {
   display: flex;
   flex-direction: column;/* 垂直排列 */
-  /*align-items: center;*//* 水平居中 */
-  margin: 16px;/* 外边距 */
+  align-items: center;/* 水平居中 */
+  width: 200px; /* 控制每个卡片宽度，和图片宽度协调 */
+  background: transparent;/* 背景透明 */
 }
 
-/* 新增：下方文字样式 */
-.game-item p,
-.game-item {
-  margin-top: 8px;/* 上边距 */
+.game-item img {
+  width: 100%;
+  height: 200px; /* 你可以根据实际需要调整高度 */
+  object-fit: cover; /* 保证图片填满且不变形 */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.game-item p {
+  margin-top: 12px;
   color: #fff;
   font-size: 1.1em;
-  /*text-align: center;*//* 文本居中 */
+  text-align: center;/* 文字居中 */
+  word-break: break-all;/* 文字换行 */
+}
+
+.title-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*margin-top: 32px;*//* 调整顶部间距 */
+  /*margin-bottom: 24px;*//* 调整底部间距 */
+}
+
+.Black_Box_Title_First,
+.Black_Box_Title_Second {
+  padding: 8px 28px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  background: #222;
+  color: #fff;
+  border-radius: 999px;
+  margin: 0;
+}
+
+.Black_Box_Title_First {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.Black_Box_Title_Second {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -4px; /* 让两个按钮无缝衔接 */
+}
+
+.Black_Box_Title_First.active {
+  background: #fff;
+  color: #222;
+}
+
+.Black_Box_Title_Second.active {
+  background: #222;
+  color: #fff;
+}
+.Black_Box_Title_First.active,
+.Black_Box_Title_Second.active {
+  background: #fff;
+  color: #222;
+  border-color: #0070f3;
 }
