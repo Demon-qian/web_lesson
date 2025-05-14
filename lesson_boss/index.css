@@ -4,7 +4,7 @@ body{
 }
 
 section {
-  background-color: rgb(60, 59, 59);
+  background-color: #121314;
 }
 .Black_Box_Title_Frist{
   display: inline-flex;/* 使元素在同一行内显示 */
@@ -52,7 +52,8 @@ p {
 .game-item p {
   margin-top: 12px;
   color: #fff;
-  font-size: 1.1em;
+  font-size: 0.5em;
+  font-weight: 400;
   text-align: center;/* 文字居中 */
   word-break: break-all;/* 文字换行 */
 }
