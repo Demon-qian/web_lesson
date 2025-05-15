@@ -6,8 +6,43 @@ body{
 /* 整体背景色 */
 section {
   background-color: #121314;
+  width: 100vw; /* 使 section 占满整个视口宽度 */
+  height: 100vh; /* 使 section 占满整个视口高度 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* 防止内容溢出 */
 }
 
+.game-list {
+  transform: scale(1); /* 默认比例 */
+  transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
+}
+
+/* 根据屏幕宽度调整缩放比例 */
+@media (max-width: 1200px) {
+  .game-list {
+    transform: scale(0.9); /* 缩小比例 */
+  }
+}
+
+@media (max-width: 992px) {
+  .game-list {
+    transform: scale(0.8); /* 缩小比例 */
+  }
+}
+
+@media (max-width: 768px) {
+  .game-list {
+    transform: scale(0.7); /* 缩小比例 */
+  }
+}
+
+@media (max-width: 576px) {
+  .game-list {
+    transform: scale(0.6); /* 缩小比例 */
+  }
+}
 /* 标题切换按钮样式 */
 .Black_Box_Title_Frist{
   display: inline-flex; /* 使元素在同一行内显示 */
@@ -131,6 +166,10 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: sticky; /* 使标题在滚动时固定 */
+  top: 0; /* 距离顶部的距离，可以根据需要调整 */
+  background-color: #121314; /* 确保背景色与 section 一致 */
+  z-index: 1000; /* 确保标题在其他内容之上 */
   /*margin-top: 32px;*//* 调整顶部间距 */
   /*margin-bottom: 24px;*//* 调整底部间距 */
 }
