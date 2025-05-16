@@ -248,23 +248,32 @@ a {
 }
 
 /* 右侧按钮激活态 */
-.Black_Box_Title_Second.active {
-  background: #222;
-  color: #fff;
-}
+/* 注意：下面这个注释指的是，如果单独为 .Black_Box_Title_Second.active 写规则，可能会被下面的通用激活态覆盖。
+   目前的通用激活态规则是正确的，所以这里不需要额外的 .Black_Box_Title_Second.active 规则。*/
 
 /* 激活态通用样式 */
 .Black_Box_Title_First.active,
 .Black_Box_Title_Second.active {
   background: #fff;
   color: #222;
-  border-color: #0070f3;
+  /* border-color: #0070f3; */ /* 如果你不需要激活时有蓝色边框，可以保持注释或删除此行 */
 }
+
+/* 仅在标题未激活（深色背景）时，悬停文字变蓝 */
 .Black_Box_Title_First:not(.active):hover,
 .Black_Box_Title_Second:not(.active):hover {
-  color: #2196f3; /* 仅未激活（黑色背景）按钮悬停时变蓝 */
+  color: #2196f3;
 }
+
+/* 确保下面这个通用的悬停规则已被删除或完全注释掉 */
+/*
 .Black_Box_Title_First:hover,
 .Black_Box_Title_Second:hover {
-  color: #2196f3; /* 悬停时字体变蓝 */
+  color: #2196f3;
 }
+*/
+.Black_Box_Title_First:hover,
+.Black_Box_Title_Second:hover {
+  color: #2196f3;
+}
+
