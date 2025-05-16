@@ -65,6 +65,11 @@ p {
   margin-left: 10px; /* 调整元素之间的间距 */
 }
 
+a {
+  text-decoration: none; /* 移除下划线 */
+  color: inherit; /* 继承父元素的颜色 */
+}
+
 /* 游戏列表容器，横向排列并自动换行 */
 .game-list {
   display: flex;
@@ -103,10 +108,41 @@ p {
 /* 单个游戏卡片样式 */
 .game-item {
   display: flex;
-  flex-direction: column; /* 垂直排列 */
-  align-items: center; /* 水平居中 */
-  width: 200px; /* 控制每个卡片宽度，和图片宽度协调 */
-  background: transparent; /* 背景透明 */
+  flex-direction: column;
+  align-items: center;
+  width: 220px; /* 这里建议和图片宽度一致，比如220px */
+  background: transparent;
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 220px; /* 保持图片为正方形或你想要的比例 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
+.game-item p,
+.game-item .xiao_biao_wenzi {
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 1em;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 4px;
+  box-sizing: border-box;
 }
 
 /* 游戏卡片内图片样式（兼容旧结构） */
@@ -170,8 +206,8 @@ p {
   top: 0; /* 距离顶部的距离，可以根据需要调整 */
   background-color: #121314; /* 确保背景色与 section 一致 */
   z-index: 1000; /* 确保标题在其他内容之上 */
-  /*margin-top: 32px;*//* 调整顶部间距 */
-  /*margin-bottom: 24px;*//* 调整底部间距 */
+  margin-top: 32px;/* 调整顶部间距 */
+  margin-bottom: 24px;/* 调整底部间距 */
 }
 
 /* 标题切换按钮基础样式 */
@@ -223,4 +259,12 @@ p {
   background: #fff;
   color: #222;
   border-color: #0070f3;
+}
+.Black_Box_Title_First:not(.active):hover,
+.Black_Box_Title_Second:not(.active):hover {
+  color: #2196f3; /* 仅未激活（黑色背景）按钮悬停时变蓝 */
+}
+.Black_Box_Title_First:hover,
+.Black_Box_Title_Second:hover {
+  color: #2196f3; /* 悬停时字体变蓝 */
 }
