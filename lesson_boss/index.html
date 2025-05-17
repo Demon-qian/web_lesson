@@ -174,57 +174,96 @@
       <p class="ps-plus-subtitle">ゲームをもっと自由に。新しい、好きなゲームと出会えるPlayStationのサブスク。</p> <!-- 副标题/描述 -->
     </div>
 
-    <div class="ps-plus-carousel-container"> <!-- 轮播图容器，包含卡片和导航箭头 -->
-      <button class="carousel-nav prev"> <!-- 上一个/左导航箭头 -->
-        <img src="../lesson_boss/image/10050.png" alt="Previous"> <!-- 箭头图标 -->
-      </button>
+    <!-- 隐藏的 Radio Buttons 用于控制轮播 -->
+    <input type="radio" name="tier-carousel" id="tier-radio-essential" class="tier-radio">
+    <input type="radio" name="tier-carousel" id="tier-radio-premium" class="tier-radio" checked> <!-- 默认选中 Premium -->
+    <input type="radio" name="tier-carousel" id="tier-radio-extra" class="tier-radio">
 
+    <!-- “上一个” 导航标签 (替换原来的 button) -->
+    <!-- 当 Essential 显示时，点击“上一个”切换到 Extra (循环) -->
+    <label for="tier-radio-extra" class="carousel-nav prev prev-for-essential">
+      <img src="../lesson_boss/image/jiantou.png" alt="Previous">
+    </label>
+    <!-- 当 Premium 显示时，点击“上一个”切换到 Essential -->
+    <label for="tier-radio-essential" class="carousel-nav prev prev-for-premium">
+      <img src="../lesson_boss/image/jiantou.png" alt="Previous">
+    </label>
+    <!-- 当 Extra 显示时，点击“上一个”切换到 Premium -->
+    <label for="tier-radio-premium" class="carousel-nav prev prev-for-extra">
+      <img src="../lesson_boss/image/jiantou.png" alt="Previous">
+    </label>
+
+    <div class="ps-plus-carousel-container"> <!-- 轮播图容器，包含卡片和导航箭头 -->
       <div class="ps-plus-tiers"> <!-- 会员等级卡片组容器 -->
         <!-- Essential Tier -->
+        <a href="https://www.playstation.com/ja-jp/ps-plus/">
         <div class="tier-card essential-tier"> <!-- “エッセンシャル” (Essential) 等级卡片 -->
-          <div class="tier-card-background" style="background-image: url('../lesson_boss/image/10073.webp');"></div> <!-- 卡片上半部分的背景图片 -->
+          <div class="tier-card-background_1"> <!-- 卡片上半部分的背景图片 -->
           <div class="tier-card-content"> <!-- 卡片下半部分的内容区域 -->
             <img src="../lesson_boss/image/10023.svg" alt="エッセンシャル" class="tier-label-img"> <!-- “エッセンシャル” 等级标签图片 -->
-            <h2>PlayStation Plus エッセンシャル</h2> <!-- 等级名称 -->
+            <h3>PlayStation Plus エッセンシャル</h3> <!-- 等级名称 -->
             <p>「毎月のフリープレイ」、「オンラインマルチプレイ」など、PlayStation Plusの基本サービスをご利用いただけます。</p> <!-- 等级描述 -->
           </div>
         </div>
+        </div>
+      </a>
 
-        <!-- Premium Tier (Center, active) -->
-        <div class="tier-card premium-tier active"> <!-- “プレミアム” (Premium) 等级卡片，当前激活状态 -->
-          <div class="tier-card-background" style="background-image: url('../lesson_boss/image/10072.webp');"></div> <!-- 卡片上半部分的背景图片 -->
+        <!-- Premium Tier (Center) -->
+      <a href="https://www.playstation.com/ja-jp/ps-plus/">
+        <div class="tier-card premium-tier"> <!-- “プレミアム” (Premium) 等级卡片，移除 active 类，CSS会处理 -->
+           <!-- 卡片上半部分的背景图片 -->
+        <div class="tier-card-background_2">
           <div class="tier-card-content"> <!-- 卡片下半部分的内容区域 -->
             <img src="../lesson_boss/image/10021.svg" alt="プレミアム" class="tier-label-img"> <!-- “プレミアム” 等级标签图片 -->
-            <h2>PlayStation Plus プレミアム</h2> <!-- 等级名称 -->
+            <h3>PlayStation Plus プレミアム</h3> <!-- 等级名称 -->
             <p>PlayStationの世代を超えた懐かしの名作が遊べる「クラシックスカタログ」ほか、すべてのサービスをご利用いただけます。</p> <!-- 等级描述 -->
+            </div>
           </div>
         </div>
+      </a>
 
         <!-- Extra Tier -->
+      <a href="https://www.playstation.com/ja-jp/ps-plus/">
         <div class="tier-card extra-tier"> <!-- “エクストラ” (Extra) 等级卡片 -->
-          <div class="tier-card-background" style="background-image: url('../lesson_boss/image/10071.webp');"></div> <!-- 卡片上半部分的背景图片 -->
+          <div class="tier-card-background_3"> <!-- 卡片上半部分的背景图片 -->
           <div class="tier-card-content"> <!-- 卡片下半部分的内容区域 -->
             <img src="../lesson_boss/image/10022.svg" alt="エクストラ" class="tier-label-img"> <!-- “エクストラ” 等级标签图片 -->
-            <h2>PlayStation Plus エクストラ</h2> <!-- 等级名称 -->
+            <h3>PlayStation Plus エクストラ</h3> <!-- 等级名称 -->
             <p>300本以上の人気作が遊べる「ゲームカタログ」ほか、PlayStation Plusの基本サービスをご利用いただけます。</p> <!-- 等级描述 -->
           </div>
         </div>
-      </div>
+        </div>
+      </a>
 
-      <button class="carousel-nav next"> <!-- 下一个/右导航箭头 -->
-        <img src="../lesson_boss/image/10050.png" alt="Next"> <!-- 箭头图标 -->
-      </button>
-    </div>
+      </div><!-- 会员等级卡片组容器结束 -->
+
+    </div><!-- 轮播图容器结束 -->
+    
+    <!-- “下一个” 导航标签 (替换原来的 button) -->
+    <!-- 当 Essential 显示时，点击“下一个”切换到 Premium -->
+    <label for="tier-radio-premium" class="carousel-nav next next-for-essential">
+      <img src="../lesson_boss/image/jiantou.png" alt="Next">
+    </label>
+    <!-- 当 Premium 显示时，点击“下一个”切换到 Extra -->
+    <label for="tier-radio-extra" class="carousel-nav next next-for-premium">
+      <img src="../lesson_boss/image/jiantou.png" alt="Next">
+    </label>
+    <!-- 当 Extra 显示时，点击“下一个”切换到 Essential (循环) -->
+    <label for="tier-radio-essential" class="carousel-nav next next-for-extra">
+      <img src="../lesson_boss/image/jiantou.png" alt="Next">
+    </label>
 
     <div class="carousel-dots"> <!-- 轮播图分页圆点容器 -->
-      <span class="dot"></span> <!-- 第一个圆点 -->
-      <span class="dot active"></span> <!-- 第二个圆点，当前激活 -->
-      <span class="dot"></span> <!-- 第三个圆点 -->
+      <label for="tier-radio-essential" class="dot"></label> <!-- 第一个圆点 -->
+      <label for="tier-radio-premium" class="dot"></label> <!-- 第二个圆点，移除 active 类 -->
+      <label for="tier-radio-extra" class="dot"></label> <!-- 第三个圆点 -->
     </div>
 
     <div class="ps-plus-details-button-container"> <!-- “详细を見る” (查看详情) 按钮的容器 -->
       <a href="https://www.playstation.com/ja-jp/ps-plus/" class="ps-plus-details-button">詳細を見る</a> <!-- “查看详情”按钮 -->
     </div>
   </section> <!-- PlayStation Plus 整体区域结束 -->
+
+  <!-- 如果你之前有 <script src="../lesson_boss/script.js"></script>，请删除或注释掉它 -->
 </body>
 </html>
