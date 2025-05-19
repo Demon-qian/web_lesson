@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 设置外层wrapper宽高、背景验证、水平居中、相对定位 */
+			.wrapper {
+				position: relative;
+				width: 610px;
+				height: 300px;
+				background-color: lightgray;
+				margin: 0 auto;
+			}
+ 
+			/* 设置内层div相对于父级绝对定位，默认隐藏 */
+			.wrapper div {
+				display: none;
+				position: absolute;
+				top: 50px;
+			}
+ 
+			/* 设置label宽高、行内块、文本居中、行高、字体大小、字体颜色 */
+			label {
+				width: 200px;
+				height: 50px;
+				display: inline-block;
+				text-align: center;
+				line-height: 50px;
+				font-size: 18px;
+				color: white;
+			}
+ 
+			/* 默认所有radio隐藏 */
+			input[type="radio"] {
+				display: none;
+			}
+ 
+			/* 被选中的radio下的label下的div显示 */
+			input[type="radio"]:checked+label+div {
+				display: block;
+			}
+ 
+			/* 被选中的radio下的label背景颜色改为红色 */
+			input[type="radio"]:checked+label {
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<input type="radio" name="gender" id="bro1" /><!-- 隐藏的radio -->
+			<label for="bro1">红楼梦</label>
+			<div>
+				《红楼梦》,中国古代章回体长篇小说，又名《石头记》《金玉缘》，被列为中国古典四大名著之首，一般认为是清代作家曹雪芹（作者尚有争议）所著。小说以贾、史、王、薛四大家族的兴衰为背景，以富贵公子贾宝玉为视角，描绘了一批举止见识出于须眉之上的闺阁佳人们的人生百态，展现了正邪两赋有情人的人...
+			</div>
+			<input type="radio" name="gender" id="bro2" checked />
+			<label for="bro2">水浒传</label>
+			<div>
+				《水浒传》是由中央电视台与中国电视剧制作中心联合出品的43集电视连续剧，根据明代施耐庵的同名小说改编。由张绍林执导，杨争光 、冉平改编，李雪健、周野芒、臧金生、丁海峰...
+			</div>
+			<input type="radio" name="gender" id="bro3" />
+			<label for="bro3">三国演义</label>
+			<div>
+				《三国演义》是中日两国合作制作的动画片，已于2009年在中国上映。该动画片是根据中国古代名著《三国演义》改编，由北京辉煌动画、央视动画与日本未来行星株式会社联手打造的高...
+			</div>
+		</div>
+	</body>
+</html>
