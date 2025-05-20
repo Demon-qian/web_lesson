@@ -1,0 +1,586 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+/* 整体背景色 */
+.Game_Showcase {
+  background-color: #121314;
+  width: 100vw; /* 使 section 占满整个视口宽度 */
+  height: 100vh; /* 使 section 占满整个视口高度 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* 防止内容溢出 */
+}
+
+.game-list {
+  transform: scale(1); /* 默认比例 */
+  transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
+}
+
+/* 根据屏幕宽度调整缩放比例 */
+@media (max-width: 1200px) {
+  .game-list {
+    transform: scale(0.9); /* 缩小比例 */
+  }
+}
+
+@media (max-width: 992px) {
+  .game-list {
+    transform: scale(0.8); /* 缩小比例 */
+  }
+}
+
+@media (max-width: 768px) {
+  .game-list {
+    transform: scale(0.7); /* 缩小比例 */
+  }
+}
+
+@media (max-width: 576px) {
+  .game-list {
+    transform: scale(0.6); /* 缩小比例 */
+  }
+}
+/* 标题切换按钮样式 */
+.Black_Box_Title_Frist{
+  display: inline-flex; /* 使元素在同一行内显示 */
+}
+
+.Black_Box_Title_Second{
+  display: inline-flex; /* 使元素在同一行内显示 */
+}
+
+/* 全局 p 标签样式 */
+p {
+  display: inline-block; /* 使元素在同一行内显示 */
+  color: white;
+  font-size: 20px;
+  margin-left: 10px; /* 调整元素之间的间距 */
+}
+
+a {
+  text-decoration: none; /* 移除下划线 */
+  color: inherit; /* 继承父元素的颜色 */
+}
+
+/* 游戏列表容器，横向排列并自动换行 */
+.game-list {
+  display: flex;
+  flex-wrap: wrap; /* 允许元素换行 */
+  justify-content: center; /* 水平居中 */
+  gap: 24px 20px; /* 行间距24px，列间距20px，可根据实际调整 */
+  margin-top: 32px; /* 调整顶部间距 */
+  margin-bottom: 32px; /* 调整底部间距 */
+  /* 保证溢出时不会遮挡放大的图片 */
+  position: relative;
+  z-index: 1;
+}
+
+/* 悬停时，所有图片先变暗 */
+.game-list:hover .img-wrapper {
+  filter: brightness(0.4) blur(1px);
+  transition: filter 0.3s;
+}
+
+/* 悬停在某个图片时，该图片高亮放大，其他图片依然变暗 */
+/* 当鼠标悬停在 .img-wrapper 上时，应用以下样式 */
+.img-wrapper:hover {
+  filter: none !important; /* 移除任何滤镜效果 */
+  transform: scale(1.05); /* 放大图片到原来的1.2倍 */
+  z-index: 10; /* 提升层级，确保放大时不被其他元素遮挡 */
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), filter 0.3s; /* 设置放大和滤镜的过渡效果 */
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5); /* 添加阴影效果，使图片更突出 */
+}
+
+/* .img-wrapper 的基础样式，确保放大时不被遮挡 */
+.img-wrapper {
+  transition: transform 0.3s, filter 0.3s; /* 设置默认的过渡效果 */
+  position: relative; /* 设置相对定位，为绝对定位的子元素提供参考 */
+}
+
+/* 单个游戏卡片样式 */
+.game-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px; /* 这里建议和图片宽度一致，比如220px */
+  background: transparent;
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 220px; /* 保持图片为正方形或你想要的比例 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
+.game-item p,
+.game-item .xiao_biao_wenzi {
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 1em;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+
+/* 游戏卡片内图片样式（兼容旧结构） */
+.game-item img {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 18px; /* 圆角 */
+}
+
+/* 平台小图标（如PS5）样式，绝对定位在图片左下角 */
+.game-item .xiao_biao{
+  position: relative;
+  left: -75px;
+  bottom: 35px;
+  width: 38px;
+  height: 18px;
+  border-radius: 4px;
+  padding: 2px 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* 游戏名文字样式 */
+.game-item p {
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 3px;
+  color: #fff;
+  font-size: 0.5em;
+  font-weight: 400;
+  text-align: center; /* 文字居中 */
+  word-break: break-all; /* 文字换行 */
+  white-space: nowrap;         /* 不换行 */
+  overflow: hidden;            /* 超出隐藏 */
+  text-overflow: ellipsis;     /* 超出显示省略号 */
+  width: 100%;                 /* 保证宽度受限 */
+  max-width: 100%;          
+}
+
+.game-item .xiao_biao_wenzi {
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  margin-top: -20px;
+  color: #fff;
+  font-size: 0.5em;
+  font-weight: 400;
+  text-align: center; /* 文字居中 */
+  word-break: break-all; /* 文字换行 */
+}
+
+/* 标题切换按钮容器样式 */
+.title-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky; /* 使标题在滚动时固定 */
+  top: 0; /* 距离顶部的距离，可以根据需要调整 */
+  background-color: #121314; /* 确保背景色与 section 一致 */
+  z-index: 1000; /* 确保标题在其他内容之上 */
+  margin-top: 32px;/* 调整顶部间距 */
+  margin-bottom: 24px;/* 调整底部间距 */
+}
+
+/* 标题切换按钮基础样式 */
+.Black_Box_Title_First,
+.Black_Box_Title_Second {
+  position: relative;
+  top: 10px;
+  padding: 8px 28px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  background: #222;
+  color: #fff;
+  border-radius: 999px;
+  margin: 0;
+}
+
+/* 左侧按钮圆角处理 */
+.Black_Box_Title_First {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* 右侧按钮圆角处理 */
+.Black_Box_Title_Second {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -4px; /* 让两个按钮无缝衔接 */
+}
+
+/* 左侧按钮激活态 */
+.Black_Box_Title_First.active {
+  background: #fff;
+  color: #222;
+}
+
+
+/* 激活态通用样式 */
+.Black_Box_Title_First.active,
+.Black_Box_Title_Second.active {
+  background: #fff;
+  color: #222;
+  /* border-color: #0070f3; */ /* 如果你不需要激活时有蓝色边框，可以保持注释或删除此行 */
+}
+
+/* 仅在标题未激活（深色背景）时，悬停文字变蓝 */
+.Black_Box_Title_First:not(.active):hover,
+.Black_Box_Title_Second:not(.active):hover {
+  color: #2196f3;
+}
+
+/* 确保下面这个通用的悬停规则已被删除或完全注释掉 */
+/*
+.Black_Box_Title_First:hover,
+.Black_Box_Title_Second:hover {
+  color: #2196f3;
+}
+*/
+.Black_Box_Title_First:hover,
+.Black_Box_Title_Second:hover {
+  color: #2196f3;
+}
+
+img {
+  max-width: 100%; /* 图片最大宽度为100%，确保响应式 */
+  height: auto; /* 高度自动，保持图片比例 */
+}
+
+/* PlayStation Plus Section Styles */
+/* PlayStation Plus 整个页面的主要容器样式 */
+.ps-plus-yemian {
+  background-image: url('../lesson_boss/image/10070.webp'); /* 背景图片 */
+  background-color: #f0f0f0; /* 背景颜色回退，当图片加载失败时显示 */
+  background-size: cover; /* 背景图片覆盖整个容器 */
+  background-position: center right; /* 背景图片居中并靠右对齐 */
+  padding: 50px 20px; /* 内边距，上下50px，左右20px */
+  text-align: center; /* 内部文本居中对齐 */
+  position: relative; /* 相对定位，用于子元素的绝对定位 */
+  display: flex; /* 使用flex布局 */
+  flex-direction: column;/* flex子元素垂直排列 */
+  align-items: center; /* flex子元素在交叉轴上居中（水平居中） */
+  box-sizing: border-box;/* 确保内边距和边框不会增加元素的总宽度和高度 */
+  color: #333; /* 此区域主要文字颜色 */
+  height: 894.65px; /* 固定高度 */
+  width: 1699.33px; /* 固定宽度 */
+}
+
+/* PlayStation Plus 顶部主要内容区域（Logo、标题、副标题） */
+.ps-plus-hero-content {
+  margin-bottom: 40px;/* 调整底部间距 */
+  max-width: 700px;/* 限制最大宽度，防止内容过宽 */
+}
+
+/* PlayStation Plus 主Logo图片样式 */
+.ps-plus-main-logo {
+  width: 275.59px; /* Logo图片宽度 */
+  height: 71.99px;
+  margin-bottom: 2px; /* Logo下方间距 */
+  top: 100px;
+  position: relative;
+}
+
+/* PlayStation Plus 区域内的 H1 标题样式 */
+.ps-plus-hero-content h1 {
+  font-size: 32px; /* 字体大小 */
+  font-weight: bold; /* 字体加粗 */
+  margin-bottom: 15px; /* 标题下方间距 */
+  color: #111; /* 标题文字颜色，比普通文字深 */
+  position: relative;
+  top: 65px;
+}
+
+/* PlayStation Plus 副标题文字样式 */
+.ps-plus-subtitle {
+  position: relative;
+  font-size: 16px; /* 字体大小 */
+  color: #555; /* 文字颜色 */
+  line-height: 1.6; /* 行高 */
+  margin-bottom: 30px; /* 副标题下方间距 */
+  top: 45px;
+}
+
+/* 轮播图容器样式 (包含卡片和导航箭头) */
+.ps-plus-carousel-container {
+  display: flex; /* 使用flex布局 */
+  align-items: center; /* flex子元素在交叉轴上居中（垂直居中） */
+  justify-content: center; /* flex子元素在主轴上居中（水平居中） */
+  width: 100%; /* 容器宽度占满父元素 */
+  margin-bottom: 30px; /* 轮播图容器下方间距 */
+  position: relative; /* 相对定位，用于导航箭头的绝对定位 */
+}
+
+/* 隐藏 radio buttons */
+.tier-radio {
+  display: none;
+}
+
+/* 轮播图导航箭头按钮样式 (现在是 label) */
+.carousel-nav {
+  background-color: rgba(30, 30, 30, 0.6); /* 半透明深色背景 */
+  border: none; /* 无边框 */
+  color: white; /* 箭头图标颜色（如果使用字体图标） */
+  border-radius: 50%; /* 圆形按钮 */
+  width: 44px; /* 按钮宽度 */
+  height: 44px; /* 按钮高度 */
+  cursor: pointer; /* 鼠标悬停时显示手型光标 */
+  display: flex; /* 使用flex布局使内部图标居中 */
+  align-items: center; /* 垂直居中图标 */
+  justify-content: center; /* 水平居中图标 */
+  position: absolute; /* 绝对定位 */
+  /* top: 50%; transform: translateY(-50%);  保持原有的垂直居中逻辑 */
+  z-index: 20; /*确保箭头在卡片之上 */
+  padding: 0; /* 移除内边距，避免影响图标定位 */
+  transition: background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  display: none; /* 默认隐藏所有导航标签 */
+}
+
+/* 为 prev 和 next 标签组设置基础定位 */
+.carousel-nav.prev {
+  left: 100px; /* 靠左对齐 (根据你原来的样式) */
+  top: 520px;  /* (根据你原来的样式) */
+}
+
+.carousel-nav.next {
+  right: 100px; /* 靠右对齐 (根据你原来的样式) */
+  top: 520px;   /* (根据你原来的样式) */
+}
+
+
+/* 根据选中的 radio 显示对应的 "上一个" 导航标签 */
+#tier-radio-essential:checked ~ .prev-for-essential,
+#tier-radio-premium:checked ~ .prev-for-premium,
+#tier-radio-extra:checked ~ .prev-for-extra {
+  display: flex;
+}
+
+/* 根据选中的 radio 显示对应的 "下一个" 导航标签 */
+#tier-radio-essential:checked ~ .next-for-essential,
+#tier-radio-premium:checked ~ .next-for-premium,
+#tier-radio-extra:checked ~ .next-for-extra {
+  display: flex;
+}
+
+/* 轮播图导航箭头按钮鼠标悬停效果 */
+.carousel-nav:hover {
+  background-color: #0070D1; /* 悬停时背景变为蓝色 */
+  border: 2px solid white; /* 添加2像素的白色实线边框 */
+}
+
+/* 轮播图导航箭头内部图片样式 */
+.carousel-nav img {
+  width: 100%; /* 箭头图片宽度 */
+  height: auto; /* 高度自动 */
+}
+/* 左导航箭头内部图片水平翻转 */
+.carousel-nav.prev img {
+  transform: scaleX(-1);
+}
+
+/* 左导航箭头定位 */
+.carousel-nav.prev {
+  left: 100px; /* 靠左对齐 */
+  top: 520px;
+}
+
+/* 右导航箭头定位 */
+.carousel-nav.next {
+  right: 100px; /* 靠右对齐 */
+  top: 520px;
+}
+
+/* 包含所有会员等级卡片的容器 */
+.ps-plus-tiers {
+  display: flex; /* 使用flex布局排列卡片 */
+  justify-content: center; /* 水平居中卡片组 */
+  align-items: center; /* 如果卡片高度不一致，则垂直居中 */
+  gap: 15px; /* 卡片之间的间距 */
+  margin: 0 auto; /* 水平居中 */
+  perspective: 1000px; /* 为卡片的3D变换效果设置透视距离 */
+}
+
+/* 单个会员等级卡片的基础样式 */
+.tier-card {
+  background-color: #121212;
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  width: 1274px; /* 修改为1274px */
+  height: 400px;  /* 修改为400px */
+  transition: transform 0.4s ease, opacity 0.4s ease, width 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  opacity: 1;
+  transform: scale(1);/* 初始状态下缩小 */
+}
+
+/* 激活状态（当前选中）的会员等级卡片样式 */
+.tier-card.active {
+  width: 1000px; /* 保持激活卡片宽度一致 */
+  height: 400px; /* 保持激活卡片高度一致 */
+  opacity: 1;
+  transform: scale(1);
+  z-index: 10;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+}
+
+/* 卡片顶部的背景图片区域 */
+.tier-card-background_1,.tier-card-background_2,.tier-card-background_3 {
+  width: 100%; /* 宽度占满卡片 */
+  height: 100%; /* 高度占卡片的一半 */
+  background-size: cover; /* 背景图片覆盖整个区域 */
+  background-position: center; /* 背景图片居中显示 */
+}
+.tier-card-background_1{
+  background-image: url('../lesson_boss/image/10073.webp');
+}
+.tier-card-background_2{
+  background-image: url('../lesson_boss/image/10072.webp');
+}
+.tier-card-background_3{
+  background-image: url('../lesson_boss/image/10071.webp');
+}
+
+/* 卡片下半部分的文字内容区域 */
+.tier-card-content {
+  display:inline-block;
+  padding: 20px; /* 内边距 */
+  text-align: left; /* 文字左对齐 */
+  flex-grow: 1; /* 占据剩余空间，使得内容可以撑开 */
+  display: flex; /* 使用flex布局 */
+  flex-direction: column; /* 内部元素垂直排列 */
+  justify-content: space-between; /* 使内容（如标题和描述）在垂直方向上均匀分布 */
+}
+
+/* 卡片内会员等级标签图片（如 "エッセンシャル" 图片） */
+.tier-label-img {
+  position: relative;
+  top: 175px;
+  width: 268.15px; /* 将宽度调整为更像横幅的尺寸 */
+  height: 31.89px; /* 高度自动，以保持图片原始宽高比 */
+  margin-bottom: 15px; /* 调整图片下方间距，使其与下方标题有合适的距离 */
+  align-self: flex-start; /* 在交叉轴上向起始位置对齐（左对齐） */
+  left: 20px;
+}
+
+/* 卡片内会员等级标题 (H2) */
+.tier-card-content h3 {
+  font-size: 20px; /* 字体大小 */
+  margin-bottom: 8px; /* 标题下方间距 */
+  font-weight: bold; /* 字体加粗 */
+  letter-spacing: .1px;
+  line-height: 1.25em;
+  position: relative;
+  top: 150px;
+  left: 20px;
+  color: #fff;
+}
+
+/* 卡片内会员等级描述文字 (P) */
+.tier-card-content p {
+  font-size: 13px; /* 字体大小 */
+  line-height: 1.6; /* 行高 */
+  color: #fff; /* 文字颜色，浅灰色 */
+  position: relative;
+  top: 150px;
+  left: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  width: 350px;
+}
+
+/* 轮播图下方的分页圆点容器 */
+.carousel-dots {
+  display: flex; /* 使用flex布局排列圆点 */
+  justify-content: center; /* 水平居中圆点组 */
+  margin-bottom: 40px; /* 圆点容器下方间距 */
+}
+
+/* 单个分页圆点样式 (现在是 label) */
+.dot {
+  width: 20px;
+  height: 4px;
+  background-color: #a0a0a0;
+  border-radius: 2px;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+/* 激活状态的分页圆点样式 (由选中的 radio 决定) */
+#tier-radio-essential:checked ~ .carousel-dots label[for="tier-radio-essential"],
+#tier-radio-premium:checked ~ .carousel-dots label[for="tier-radio-premium"],
+#tier-radio-extra:checked ~ .carousel-dots label[for="tier-radio-extra"] {
+  background-color: #0070D1; /* 激活状态横线颜色 (蓝色) */
+  width: 30px; /* 激活状态的横线更长一些 */
+  /* height 保持不变 */
+}
+
+.ps-plus-details-button-container {
+  margin-top: 10px; /* 按钮容器与上方元素的间距 */
+}
+
+/* "详细を見る" 按钮样式 */
+.ps-plus-details-button {
+  background-color: #0070D1; /* 按钮背景蓝色 */
+  color: white; /* 文字颜色白色 */
+  padding: 10px 25px; /* 按钮内边距，上下10px，左右25px */
+  border-radius: 20px; /* 按钮圆角 */
+  text-decoration: none; /* 移除文字下划线 */
+  font-weight: bold; /* 字体加粗 */
+  font-size: 16px; /* 字体大小 */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* 更新：添加了 box-shadow 到过渡效果 */
+  display: inline-block; /* 使按钮表现为行内块元素，可以设置宽高和边距 */
+  box-shadow: 0 4px 10px rgba(0, 112, 209, 0.3); /* 按钮阴影，带蓝色调 */
+}
+
+/* "详细を見る" 按钮鼠标悬停效果 */
+.ps-plus-details-button:hover {
+  background-color: #0078E6; /* 更新：悬停时按钮背景颜色略微调亮，以匹配图片 */
+  transform: translateY(-1px); /* 悬停时按钮向上轻微移动 */
+  box-shadow: 0 6px 12px rgba(0, 112, 209, 0.35), /* 更新：外部阴影略微增强 */
+              inset 0 0 0 2px rgba(128, 191, 255, 0.75); /* 新增：内部高光边框效果，模拟图片中的样式 */
+}
+
+.essential-tier {
+  position: relative;
+  left: -10px;
+  width: 1274px;
+  height: 400px;
+}
+.extra-tier{
+  position: relative;
+  right: -10px;
+  width: 1274px;
+  height: 400px;
+}
