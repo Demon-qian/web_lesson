@@ -68,15 +68,17 @@ a {
 /* 游戏列表容器，横向排列并自动换行 */
 .game-list {
   display: flex;
-  flex-wrap: wrap; /* 允许元素换行 */
+  flex-wrap: wrap;
   justify-content: center; /* 水平居中 */
-  gap: 24px 20px; /* 行间距24px，列间距20px，可根据实际调整 */
-  margin-top: 32px; /* 调整顶部间距 */
-  margin-bottom: 32px; /* 调整底部间距 */
-  /* 保证溢出时不会遮挡放大的图片 */
+  align-items: flex-start; /* 顶部对齐 */
+  gap: 24px 20px;
+  margin-top: 32px;
+  margin-bottom: 32px;
   position: relative;
   z-index: 1;
+  width: 100%; /* 保证宽度占满父容器 */
 }
+  
 
 /* 悬停时，所有图片先变暗 */
 .game-list:hover .img-wrapper {
@@ -391,8 +393,13 @@ img {
 
 /* 轮播图导航箭头按钮鼠标悬停效果 */
 .carousel-nav:hover {
-  background-color: #0070D1; /* 悬停时背景变为蓝色 */
-  border: 2px solid white; /* 添加2像素的白色实线边框 */
+  /*background-color: #0070D1;*/ /* 悬停时背景变为蓝色 */
+  /*border: 2px solid #0070D1; *？/* 外圈蓝色边框，与图片蓝色一致 */
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.6),   /* 外部淡蓝色光晕 */
+    0 0 0 4px rgb(0,112,204); /* 更外层透明白色圈 */
+  /* 你可以根据实际视觉效果调整8px和16px的数值 */
+  transition: background-color 0.3s, border 0.3s, box-shadow 0.3s;
 }
 
 /* 轮播图导航箭头内部图片样式 */
@@ -452,6 +459,10 @@ img {
   transform: scale(1);
   z-index: 10;
   box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+  .tier-card:hover {
+    box-shadow: 0 12px 40px 0 rgba(0,0,0,0.18), 0 1.5px 8px 0 rgba(0,0,0,0.12);
+    transition: box-shadow 0.3s;
+  }
 }
 
 /* 卡片顶部的背景图片区域 */
@@ -568,8 +579,9 @@ img {
 .ps-plus-details-button:hover {
   background-color: #0078E6; /* 更新：悬停时按钮背景颜色略微调亮，以匹配图片 */
   transform: translateY(-1px); /* 悬停时按钮向上轻微移动 */
-  box-shadow: 0 6px 12px rgba(0, 112, 209, 0.35), /* 更新：外部阴影略微增强 */
-              inset 0 0 0 2px rgba(128, 191, 255, 0.75); /* 新增：内部高光边框效果，模拟图片中的样式 */
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.6),   /* 外部淡蓝色光晕 */
+    0 0 0 4px rgb(0,112,204); /* 更外层透明白色圈 */
 }
 
 .essential-tier {
@@ -583,4 +595,41 @@ img {
   right: -10px;
   width: 1274px;
   height: 400px;
+}
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* 主内容区域高度自适应 900px，宽度100% */
+.Game_Showcase,
+.ps-plus-yemian {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  height: 900px !important;
+  min-height: 900px !important;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.game_size {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: unset;
+  width: 1230px;
+  overflow:auto;
+  text-align: center;
+  position: relative;
+  left: 60px;
+}
+.ju_zhong {
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  position: relative;
+  left: 325px;
 }
