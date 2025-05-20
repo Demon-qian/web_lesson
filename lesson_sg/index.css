@@ -1,3 +1,4 @@
+
 body{
   margin: 0;
   padding: 0;
@@ -425,6 +426,7 @@ img {
   gap: 15px; /* 卡片之间的间距 */
   margin: 0 auto; /* 水平居中 */
   perspective: 1000px; /* 为卡片的3D变换效果设置透视距离 */
+  width: 1900px;/
 }
 
 /* 单个会员等级卡片的基础样式 */
@@ -573,14 +575,20 @@ img {
 }
 
 .essential-tier {
-  position: relative;
+  position: fixed;
   left: -10px;
   width: 1274px;
   height: 400px;
 }
 .extra-tier{
-  position: relative;
+  position: fixed;
   right: -10px;
   width: 1274px;
   height: 400px;
+}
+.hide-outside-section {
+  display: none;
+}
+section .hide-outside-section {
+  display: block;
 }
