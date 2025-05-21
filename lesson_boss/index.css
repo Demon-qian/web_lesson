@@ -204,7 +204,8 @@ a {
   background-color: #121314; /* 确保背景色与 section 一致 */
   z-index: 1000; /* 确保标题在其他内容之上 */
   margin-top: 32px;/* 调整顶部间距 */
-  margin-bottom: 24px;/* 调整底部间距 */
+  margin-bottom: 50px;/* 调整底部间距 */
+
 }
 
 /* 标题切换按钮基础样式 */
