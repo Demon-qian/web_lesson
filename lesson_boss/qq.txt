@@ -1,0 +1,506 @@
+/* =========================
+   全局基础样式
+   ========================= */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* =========================
+   游戏展示区（Game_Showcase）
+   ========================= */
+.Game_Showcase {
+  background-color: #121314;      /* 整体深色背景 */
+  width: 100vw;                   /* 占满视口宽度 */
+  height: 100vh;                  /* 占满视口高度 */
+  display: flex;                  /* 弹性布局，居中内容 */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;               /* 防止内容溢出 */
+}
+
+/* =========================
+   游戏列表（game-list）
+   ========================= */
+.game-list {
+  display: flex;                  /* 横向排列 */
+  flex-wrap: wrap;                /* 自动换行 */
+  justify-content: center;        /* 水平居中 */
+  align-items: flex-start;        /* 顶部对齐 */
+  gap: 24px 20px;                 /* 行间距、列间距 */
+  margin: 32px 0;
+  position: relative;
+  z-index: 1;
+  width: 100%;                    /* 占满父容器宽度 */
+  transform: scale(1);            /* 默认缩放比例 */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 响应式缩放，适配不同屏幕宽度 */
+@media (max-width: 1200px) {
+  .game-list { transform: scale(0.9); }
+}
+@media (max-width: 992px) {
+  .game-list { transform: scale(0.8); }
+}
+@media (max-width: 768px) {
+  .game-list { transform: scale(0.7); }
+}
+@media (max-width: 576px) {
+  .game-list { transform: scale(0.6); }
+}
+
+/* 游戏卡片悬停效果：所有图片变暗 */
+.game-list:hover .img-wrapper {
+  filter: brightness(0.4) blur(1px);
+  transition: filter 0.3s;
+}
+
+/* 单个图片悬停高亮放大，其他图片依然变暗 */
+.img-wrapper:hover {
+  filter: none !important;
+  transform: scale(1.05);
+  z-index: 10;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), filter 0.3s;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+/* 图片容器基础样式 */
+.img-wrapper {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+/* 游戏卡片样式 */
+.game-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  background: transparent;
+}
+
+/* 游戏图片样式 */
+.img-wrapper img,
+.game-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
+/* 平台小图标（如PS5）样式 */
+.game-item .xiao_biao {
+  position: relative;
+  left: -75px;
+  bottom: 35px;
+  width: 38px;
+  height: 18px;
+  border-radius: 4px;
+  padding: 2px 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* 游戏名文字样式 */
+.game-item p,
+.game-item .xiao_biao_wenzi {
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 1em;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 4px;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-size: 0.5em;
+  font-weight: 400;
+  word-break: break-all;
+}
+
+/* 平台小图标文字样式 */
+.game-item .xiao_biao_wenzi {
+  margin-top: -20px;
+}
+
+/* =========================
+   标题切换按钮样式
+   ========================= */
+.title-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #121314;
+  z-index: 1000;
+  margin: 32px 0 24px 0;
+}
+
+.Black_Box_Title_First,
+.Black_Box_Title_Second {
+  position: relative;
+  top: 10px;
+  padding: 8px 28px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  background: #222;
+  color: #fff;
+  border-radius: 999px;
+  margin: 0;
+}
+
+.Black_Box_Title_First {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.Black_Box_Title_Second {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -4px;
+}
+
+/* 激活态样式 */
+.Black_Box_Title_First.active,
+.Black_Box_Title_Second.active {
+  background: #fff;
+  color: #222;
+}
+
+/* 悬停变蓝（未激活时） */
+.Black_Box_Title_First:not(.active):hover,
+.Black_Box_Title_Second:not(.active):hover {
+  color: #2196f3;
+}
+
+/* =========================
+   全局标签样式
+   ========================= */
+p {
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+  margin-left: 10px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   PlayStation Plus 区域样式
+   ========================= */
+.ps-plus-yemian {
+  background-image: url('../lesson_boss/image/10070.webp');
+  background-color: #f0f0f0;
+  background-size: cover;
+  background-position: center right;
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  color: #333;
+  height: 900px;
+  width: 100vw;
+}
+
+.ps-plus-hero-content {
+  margin-bottom: 40px;
+  max-width: 700px;
+}
+.ps-plus-main-logo {
+  width: 275.59px;
+  height: 71.99px;
+  margin-bottom: 2px;
+  top: 100px;
+  position: relative;
+}
+.ps-plus-hero-content h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #111;
+  position: relative;
+  top: 65px;
+}
+.ps-plus-subtitle {
+  position: relative;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  top: 45px;
+}
+
+/* 轮播图容器 */
+.ps-plus-carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+/* 隐藏 radio 按钮 */
+.tier-radio {
+  display: none;
+}
+
+/* 轮播图导航箭头按钮 */
+.carousel-nav {
+  background-color: rgba(30, 30, 30, 0.6);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 20;
+  padding: 0;
+  transition: background-color 0.3s, border 0.3s, box-shadow 0.3s;
+  display: none;
+}
+
+/* 箭头定位 */
+.carousel-nav.prev { left: 100px; top: 520px; }
+.carousel-nav.next { right: 100px; top: 520px; }
+
+/* 根据 radio 显示对应箭头 */
+#tier-radio-essential:checked ~ .prev-for-essential,
+#tier-radio-premium:checked ~ .prev-for-premium,
+#tier-radio-extra:checked ~ .prev-for-extra,
+#tier-radio-essential:checked ~ .next-for-essential,
+#tier-radio-premium:checked ~ .next-for-premium,
+#tier-radio-extra:checked ~ .next-for-extra {
+  display: flex;
+}
+
+/* 箭头悬停圈圈效果 */
+.carousel-nav:hover {
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.6),
+    0 0 0 4px rgb(0,112,204);
+  transition: background-color 0.3s, border 0.3s, box-shadow 0.3s;
+}
+
+/* 箭头图片样式 */
+.carousel-nav img { width: 100%; height: auto; }
+.carousel-nav.prev img { transform: scaleX(-1); }
+
+/* 会员等级卡片组容器 */
+.ps-plus-tiers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+/* 单个会员等级卡片基础样式 */
+.tier-card {
+  background-color: #121212;
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  width: 1274px;
+  height: 400px;
+  transition: transform 0.4s, opacity 0.4s, width 0.4s;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 激活状态卡片样式 */
+.tier-card.active {
+  width: 1000px;
+  height: 400px;
+  opacity: 1;
+  transform: scale(1);
+  z-index: 10;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+}
+/* 卡片悬停阴影效果 */
+.tier-card:hover {
+  box-shadow: 0 12px 40px 0 rgba(0,0,0,0.18), 0 1.5px 8px 0 rgba(0,0,0,0.12);
+  transition: box-shadow 0.3s;
+}
+
+/* 卡片顶部背景图片 */
+.tier-card-background_1,
+.tier-card-background_2,
+.tier-card-background_3 {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.tier-card-background_1 { background-image: url('../lesson_boss/image/10073.webp'); }
+.tier-card-background_2 { background-image: url('../lesson_boss/image/10072.webp'); }
+.tier-card-background_3 { background-image: url('../lesson_boss/image/10071.webp'); }
+
+/* 卡片下半部分内容区域 */
+.tier-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  text-align: left;
+  flex-grow: 1;
+}
+
+/* 会员等级标签图片 */
+.tier-label-img {
+  position: relative;
+  top: 175px;
+  width: 268.15px;
+  height: 31.89px;
+  margin-bottom: 15px;
+  align-self: flex-start;
+  left: 20px;
+}
+
+/* 会员等级标题 */
+.tier-card-content h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  letter-spacing: .1px;
+  line-height: 1.25em;
+  position: relative;
+  top: 150px;
+  left: 20px;
+  color: #fff;
+}
+
+/* 会员等级描述 */
+.tier-card-content p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #fff;
+  position: relative;
+  top: 150px;
+  left: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  width: 350px;
+}
+
+/* 轮播图分页圆点 */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.dot {
+  width: 20px;
+  height: 4px;
+  background-color: #a0a0a0;
+  border-radius: 2px;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, width 0.3s;
+}
+/* 激活分页圆点 */
+#tier-radio-essential:checked ~ .carousel-dots label[for="tier-radio-essential"],
+#tier-radio-premium:checked ~ .carousel-dots label[for="tier-radio-premium"],
+#tier-radio-extra:checked ~ .carousel-dots label[for="tier-radio-extra"] {
+  background-color: #0070D1;
+  width: 30px;
+}
+
+/* 详细按钮容器 */
+.ps-plus-details-button-container {
+  margin-top: 10px;
+}
+/* 详细按钮样式 */
+.ps-plus-details-button {
+  background-color: #0070D1;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 112, 209, 0.3);
+}
+/* 详细按钮悬停效果 */
+.ps-plus-details-button:hover {
+  background-color: #0078E6;
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.6),
+    0 0 0 4px rgb(0,112,204);
+}
+
+/* 会员卡片左右微调 */
+.essential-tier {
+  position: relative;
+  left: -10px;
+  width: 1274px;
+  height: 400px;
+}
+.extra-tier {
+  position: relative;
+  right: -10px;
+  width: 1274px;
+  height: 400px;
+}
+
+/* =========================
+   其他辅助样式
+   ========================= */
+.game_size {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: unset;
+  width: 1230px;
+  overflow: auto;
+  text-align: center;
+  position: relative;
+  left: 60px;
+}
+.ju_zhong {
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 325px;
+}
