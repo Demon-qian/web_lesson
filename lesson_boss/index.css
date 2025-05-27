@@ -600,12 +600,13 @@ img {
 .game_size-zcx {
   display: flex;                   /* 弹性盒子布局 */
   flex-wrap: wrap;                 /* 超出一行自动换行 */
+  justify-content: center; /* 新增：让最后一行居中 */
   max-width: unset;                /* 取消最大宽度限制 */
-  width: 1230px;                   /* 固定宽度1230px */
-  overflow:auto;                   /* 内容溢出时显示滚动条 */
+  width: 1320px;                   /* 220px*6=1320px，保证每行6个 */
+  overflow: auto;                   /* 内容溢出时显示滚动条 */
   text-align: center;              /* 内容居中对齐 */
   position: relative;              /* 相对定位 */
-  left: 60px;                      /* 向右偏移60px，实现整体居中视觉效果 */
+  left: 0px; /* 去掉偏移，真正居中 */
 }
 
 /* 居中辅助类，常用于特殊卡片，内容居中并整体右移325px */
@@ -619,5 +620,5 @@ img {
   align-items: center;             /* 垂直方向居中对齐 */
   justify-content: center;         /* 水平方向居中对齐 */
   position: relative;              /* 相对定位 */
-  left: 120px;                     
+  left: 10px;                     
 }
