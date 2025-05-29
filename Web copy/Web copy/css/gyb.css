@@ -1,0 +1,83 @@
+.gyb *{
+	padding: 0px;
+	margin: 0px;
+}
+.gyb body{
+	position: absolute;
+	margin-top: auto;
+}
+.gyb .footer{
+	width: 100%;
+	background-color: #00439c;
+	box-sizing: border-box;
+	padding: 30px 80px;
+}
+.gyb .logo{
+	border-bottom: 1px solid #3369b0;
+}
+.gyb .logo img{
+	height: 72px;
+}
+
+.gyb li{
+	list-style: none;
+}
+.gyb .footer .nav{
+	border-bottom: 1px solid #3369b0;
+	height: 297px;
+	margin-top: 20px;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+}
+.gyb .footer .nav ul {
+	width: 205px;
+}
+.gyb .footer .nav ul li{
+	height: 30px;
+	font-family: 'Courier New', Courier, monospace;
+	line-height: 30px;
+	font-size: 13px;
+}
+.gyb .footer .nav ul li:hover{
+	color: #b3c7e1;
+}
+.gyb .footer .nav ul .active:hover{
+	color: white;
+}
+.gyb .footer .nav ul .active{
+	font-size: 18px;
+	font-weight: bold;
+}
+.gyb .sony{
+	height: 160px;
+	border-bottom: 1px solid #3369b0;
+}
+.gyb .sony .top{
+	display: flex;
+	align-items: center;
+	color: white;
+	font-weight: bold;
+}
+.gyb .sony .bottom{
+	color: white;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 13px;
+}
+
+.gyb .rb{
+	height: 52px;
+	display: flex;
+	font-family: 'Courier New', Courier, monospace;
+	color: white;
+	justify-content: space-between;
+	align-items: center;
+	
+}
+.gyb .rb div:first-child{
+	display: flex;
+	align-items: center;
+}
+.gyb .rb div:first-child span{
+	margin-left: 20px;
+}

@@ -1,0 +1,166 @@
+body {
+    overflow-x: hidden; /* 防止水平滚动条 */
+}
+.mwj{
+    margin-top: 300px;
+}
+
+.mwj .container {
+    width:1400px; 
+    margin: 50px auto 20px; /* 上、下、左右外边距 */
+    display: flex; /* 使用弹性布局 */
+    align-items: center; /* 垂直居中对齐 */
+}
+
+.mwj .text-content {
+    margin-right: 90px; /* 右侧外边距 */
+    /* 添加左侧外边距使元素右移 */
+    margin-left: 10px; 
+    
+}
+
+.mwj .picture {
+    height: 500px; 
+    margin-left: 10px; /* 添加左外边距，使元素向左移动 */
+}
+
+.mwj .picture img {
+    height: 100%; 
+}
+
+.mwj .choice {
+    margin-top: 30px; /* 与上方内容的间距 */
+    display: flex; /* 使用弹性布局 */
+    justify-content: center; /* 水平居中对齐 */
+    flex-wrap: nowrap; /* 防止子元素换行 */
+    position: relative; /* 相对定位，作为滚动按钮的参考点 */
+    margin-left: 20px; /* 调整左侧外边距以实现居中偏右 */
+}
+
+.mwj .scroll-btn {
+    position: absolute; 
+    top: 50%; /* 垂直居中 */
+    transform: translateY(-50%); /* 精确垂直居中 */
+    width: 40px; /* 按钮宽度 */
+    height: 40px; /* 按钮高度 */
+    background-color: rgb(0, 112, 204); 
+    border-radius: 50%; /* 圆形按钮 */
+    display: flex; /* 使用弹性布局使内容居中 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    color: white; 
+    font-weight: bold; /* 文字加粗 */
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+    z-index: 10; 
+    outline:2px solid rgba(0,112,204,0);
+    outline-offset: 1.5px;
+    transition: outline-color 0.2s ease;
+}
+
+.mwj .scroll-btn:hover {
+    background-color: rgb(0, 90, 170); /* 悬停时背景色变深 */
+    outline: 2px solid rgba(0,112,204,1);
+}
+
+.mwj .scroll-left {
+    left: 10px; /* 左侧按钮位置 */
+}
+
+.mwj .scroll-right {
+    right: 10px; /* 右侧按钮位置 */
+}
+
+.mwj .block {
+    display: inline-block; /* 行内块元素 */
+    text-align: center; /* 文本居中 */
+    margin: 0 5px; /* 左右外边距 */
+    width: 260px; /* 块宽度 */
+    height: 190px; /* 块高度 */
+    flex-shrink: 0; /* 防止元素被压缩 */
+    cursor: pointer; /* 鼠标指针变为手型 */
+    outline: none; /* 移除默认的焦点轮廓 */
+    position: relative; /* 为伪元素提供定位参考 */
+    border: 2px solid transparent; /* 初始透明边框 */
+    transition: border-color 0.3s ease; /* 边框颜色过渡效果 */
+}
+
+.mwj .block:focus .mwj-tp {
+    border: 2px solid rgb(0, 112, 204); /* 选中时边框变为蓝色 */
+    border-radius: 14px; /* 选中时边框变为圆角 */
+}
+
+.mwj .block:focus .mwj-text {
+    color: rgb(0, 112, 204); /* 选中时文字变为蓝色 */
+}
+
+.mwj .choice img {
+    width: 210px; /* 图片宽度 */
+    height: 111px; /* 图片高度 */
+    margin: 5px; /* 外边距 */
+    padding: 14px; /* 内边距 */
+    border-radius: 14px; /* 圆角效果 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    transition: all 0.3s ease; /* 过渡动画 */
+    opacity: 0.6; /* 默认状态下图片半透明 */
+}
+
+.mwj .choice .block:hover img,
+.mwj .choice .block:focus img {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* 悬停或选中时阴影加深 */
+    transform: translateY(-3px); /* 悬停或选中时轻微上浮 */
+    opacity: 1; /* 恢复完全不透明 */
+}
+
+.mwj .text {
+    white-space: normal; /* 允许文本正常换行 */
+    font-size: 14px; /* 文字大小 */
+    margin-top: 5px; /* 上方外边距 */
+    font-weight: 300; /* 细字体 */
+    color: #333; /* 文字颜色 */
+}
+
+.mwj .button-container {
+    display: flex; /* 弹性布局 */
+}
+
+.mwj .detailed {
+    color: beige; /* 文字颜色 */
+    background-color: rgb(0, 112, 204); /* 背景色 */
+    padding: 8px 11px; /* 内边距 */
+    border-radius: 40px; /* 圆角效果 */
+    transition: all 0.3s ease; /* 过渡动画 */
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+    margin-right: 10px; /* 右侧外边距 */
+    outline:2px solid rgba(0,112,204,0);
+    outline-offset: 1.5px;
+    transition: outline-color 0.2s ease;
+    font-weight: 400; /* 细字体 */
+    font-size: 12px; /* 字体大小 */
+}
+
+.mwj .detailed:hover {
+    background-color: rgb(0, 90, 170); /* 悬停时背景色变深 */
+    outline: 2px solid rgba(0,112,204,1);
+}
+
+.mwj .a {
+    color: rgb(0, 112, 204); /* 蓝色文字 */
+    font-size: 24px; /* 字体大小 */
+    margin-bottom: 5px; /* 下方外边距 */
+    font-weight: 400; /* 细字体 */
+}
+
+.mwj .b {
+    font-weight: 50; /* 细字体 */
+    padding-top: 14px; /* 上内边距 */
+    padding-bottom: 15px; /* 下内边距 */
+    font-size: 14px; /* 字体大小 */
+    line-height: 1.4; /* 行高 */
+}
+h1 {
+    font-weight: 535; /* 细字体 */
+    font-size: 45px; /* 字体大小 */
+}
+.mwj .text-content{
+    width: 400px; /* 宽度 */
+}

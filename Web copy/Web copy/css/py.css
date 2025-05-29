@@ -1,0 +1,607 @@
+.py .py-container {
+    max-width: 1400px;
+    margin: 50px auto 20px ;  /* 修改为 margin: 50px 0 20px 50px 实现左移 */
+    display: flex;
+    justify-content: flex-start;  /* 从 space-between 改为向左对齐 */
+    align-items: center;
+    gap: 20px;  /* 调整元素之间的间距 */;
+}
+
+/* 新增子元素间距控制 */
+.py .py-container > * {
+    margin-right: 20px;  /* 保持元素间距 */
+}
+.py .py-text-content {
+    width: 90%;
+    padding: 20px 10px 20px 0;  /* 右侧内边距从15px减少到10px */
+    margin-right: 0;  /* 移除负边距 */
+}
+
+.py .py-picture {
+    margin-left: -15px;  /* 向左微调抵消部分间距 */
+    height: 550px;
+    width: 4000px;
+}
+.py .py-text-content {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* 从center改为左对齐 */
+}
+
+.py .py-text-content svg {
+    width: 300px;
+    height: auto;
+    margin: 0 0 20px;  /* 移除自动边距 */
+}
+
+.py .py-picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px; /* 可根据需求调整圆角大小，数值越大圆角越明显 */
+}
+
+.py .py-choice {
+    /* 原margin-top: 30px; margin-left: 20px; */
+    margin-top: 20px; /* 上外边距从30px缩小至20px */
+    margin-left: 10px; /* 左外边距从20px缩小至10px */
+    margin-right: 10px; /* 新增右外边距（原无显式设置） */
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    position: relative;
+    padding: 0; /* 新增，将内边距设置为0 */
+}
+
+.py .py-scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgb(0, 112, 204);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.py .py-scroll-btn:hover {
+    background-color: rgb(0, 90, 170);
+}
+
+.py .py-scroll-left {
+    left: 50px;
+}
+
+.py .py-scroll-right {
+    right: 50px;
+}
+
+.py .py-block {
+    display: inline-block;
+    text-align: center;
+    margin: 0 5px;
+    width: 213px;
+    height: 147px;
+    flex-shrink: 0;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.py .py-block:focus .py-tp {
+    border: 2px solid rgb(0, 112, 204);
+    border-radius: 14px;
+}
+
+.py .py-text {
+    white-space: normal;
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: 300;
+    color: #333;
+}
+
+.py .py-choice > img {
+    width: 162px;
+    height: 91px;
+    margin: 5px 5px 5px 0; /* 调整左边距为0（原5px），其他边距保持5px */
+    padding: 14px;
+    border-radius: 14px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.py .py-choice .py-block:hover img,
+.py .py-choice .py-block:focus img {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    opacity: 1;
+}
+
+.py .py-button-container {
+    display: flex;
+}
+
+.py .py-detailed {
+    color: beige;
+    background-color: rgb(0, 112, 204);
+    padding: 10px 14px;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-right: 10px;
+    border: 2px solid transparent;
+}
+
+.py .py-detailed:hover {
+    background-color: rgb(0, 90, 170);
+    border: 2px solid white;
+    box-shadow: 0 0 8px rgba(0,112,204);
+}
+
+.py .py-a {
+    color: #666666;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.py .py-b {
+    font-weight: 200;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.py body {
+    font-family: "Helvetica Neue", Arial, sans-serif; /* PS官网常用无衬线字体 */
+    line-height: 1.6;
+    color: #1f1f1f;
+    background-color: #f5f7fa; /* PS官网浅灰背景 */
+    padding: 2rem 0;
+}
+
+.py .py-section {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 35, 102, 0.08);
+    overflow: hidden;
+    transition: transform 0.25s ease;
+    margin-bottom: 0; 
+    margin-left: 10px;
+    width: 350px;
+    height: 462px;
+    box-sizing: border-box;
+    padding: 8px; /* 减少内边距（原15px） */
+}
+
+.py .py-section > img {
+    width: calc(100% + 16px); /* 抵消容器padding */
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    margin: -8px; /* 抵消容器padding */
+
+/* 新增/修改尺寸属性 */
+    width: 350px; /* 直接设置宽度（根据需求调整数值，如450px、550px等） */
+    height: 462px; /* 直接设置高度（根据需求调整数值） */
+    box-sizing: border-box; /* 确保内边距和边框包含在总尺寸中 */
+}
+
+/* 如果需要单独控制 .py-choice 容器内的 .py-section 尺寸（覆盖通用样式） */
+.py .py-section > img {
+    width: calc(100% + 16px);
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    margin: -8px;
+    display: block;  /* 新增块级显示 */
+    margin: 0 auto;  /* 新增水平居中 */
+    width: 95%;      /* 调整宽度留出边距 */
+}
+
+
+.py .py-section:hover {
+    transform: translateY(-4px); /* 悬停上移效果 */
+    box-shadow: 0 8px 20px rgba(0, 114, 206, 0.15); /* 加深品牌蓝阴影 */
+}
+
+.py .py-section > img {
+    width: 110%;  /* 从95%增大到100% */
+    height: 300px; /* 从280px增大到300px */
+    object-fit: cover;
+    object-position: center;
+    margin: -8px auto; /* 保持居中 */
+}
+
+
+.py .py-section h1 {
+    font-family: var(--dk-font);
+    font-style: normal;
+    font-weight: 400;
+    color: #1f1f1f;
+    text-align: center;  /* 新增居中属性 */
+}
+
+.py .py-section .py-b {
+    font-size: 1rem; /* 16px（次要内容字号） */
+    color: #666666; /* 中灰色 */
+    margin: 0 1.5rem 1.5rem;
+    line-height: 1.6;
+}
+
+.py .py-section > div:not(:first-child) {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* 头像与文本间距 */
+    padding: 1.5rem;
+}
+
+.py .py-section > div > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* 圆形头像 */
+    object-fit: cover;
+}
+
+.py .py-txt-small {
+    flex: 1; /* 文本区域占满剩余空间 */
+}
+
+.py .py-txt-small .py-p2 {
+    margin: 0;
+    font-size: 0.875rem; /* 14px（次要信息字号） */
+    line-height: 1.4;
+}
+
+.py .py-txt-small .py-p2:first-child {
+    color: #333333; /* 深灰色 */
+    font-weight: 500;
+}
+
+.py .py-txt-small .py-p2:nth-child(2) {
+    color: #666666; /* 中灰色 */
+}
+
+.py .py-txt-small .py-p2:last-child {
+    color: #999999; /* 浅灰色 */
+}
+
+.py .py-picture {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 25px;  /* 间距从20px增加到25px */
+    padding: 15px 0;  /* 上下内边距从10px增加到15px */
+    min-height: 500px;  /* 新增最小高度 */
+}
+
+.py .py-picture .py-section {
+    flex-shrink: 0;
+    min-width: 590px;  /* 宽度从350px增加到590px */
+    height: 403px;      /* 高度从520px减少到403px */
+}
+
+.py .py-picture img {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+    object-position: center;  /* 新增居中定位 */
+}
+
+.py .py-choice .py-section {
+    width: 400px;
+    height: 550px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    margin: 0 5px;
+    padding: 10px 8px;
+}
+
+.py .py-carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.py .py-carousel-dots input[type="radio"] {
+    display: none;
+}
+
+.py .py-dot {
+    width: 14px;
+    height: 2px;
+    background-color: #a0a0a0; 
+    border-radius: 3px;
+    margin: 0 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.py .py-carousel-dots input[type="radio"]:checked + label.py-dot {
+    background-color: blue; 
+}
+
+.py .py-carousel-dots {
+    position: relative;
+    top: 20px;
+}
+
+.py .py-jintie {
+    margin-top: -120px;
+    width: 288px;
+    height: 403px;
+    font-size: 0.85em;  /* 二次缩小整体尺寸 */
+    padding: 8px 12px;  /* 内边距二次缩减 */
+    max-width: 90%;  /* 新增最大宽度限制 */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.py .py-jintie h1 {
+    font-size: 3.2rem;  /* 二次缩小标题 */
+    line-height: 1.2;  /* 紧凑行高 */
+    margin: 0.6em 0;  /* 减少间距 */
+}
+
+.py .py-jintie .py-a {
+    font-size: 0.9em;  /* 副标题二次缩小 */
+    margin-bottom: 6px;  /* 间距微调 */
+}
+
+.py .py-jintie .py-detailed {
+    padding: 6px 10px;  /* 按钮尺寸二次缩小 */
+    font-size: 0.85em;
+    border-radius: 35px;  /* 圆角微调 */
+}
+
+.py .py-ps-newsletter {
+    padding: 4rem 1rem;
+    color: white;
+}
+
+.py .py-ps-newsletter__content {
+    flex: 1 1 100%;
+    text-align: center;
+    order: 1;
+}
+
+.py .py-ps-newsletter__title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.py .py-ps-newsletter__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid white;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.py .py-ps-newsletter__button:hover {
+    background-color: white;
+    color: #3152a7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.py .py-ps-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.py .py-ps-newsletter__media {
+    flex: 1 1 100%;
+    text-align: center;
+    order: 2;
+    height: 100%;
+}
+
+.py .py-ps-newsletter__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin-top: 0;
+    margin: 0 auto;
+}
+
+.py .py-ps-newsletter__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: nowrap;
+}
+
+.py .py-ps-newsletter__content,
+.py .py-ps-newsletter__media {
+    flex: 1 0 auto;
+    max-width: unset;
+}
+
+@media (min-width: 1024px) {
+    .py-ps-newsletter__container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .py-ps-newsletter__content,
+    .py-ps-newsletter__media {
+        flex: 1 1 100%;
+        max-width: 800px;
+        text-align: center;
+    }
+
+    .py-ps-newsletter__title {
+        font-size: 2.2rem;
+    }
+}
+
+.py .py-ps-newsletter__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    top: 76.5px;
+}
+
+.py .py-ps-newsletter__button {
+    margin: 0 auto 1.5rem;
+}
+
+.py .py-on .py-gpdc-section {
+    font-size: 45px;
+    line-height: 1.6;
+}
+
+.py .py-on .py-gpdc-section h1,
+.py .py-on .py-gpdc-section h2,
+.py .py-on .py-gpdc-section h3 {
+    font-size: 1.2em;
+    margin: 0.8em 0;
+}
+
+.py .py-ps-newsletter__content {
+    background-color: #243b88; 
+    padding: 30px 15px; 
+    margin: 10px 0; 
+    height: 600px;
+    width: 45%; 
+    max-width: 430px; 
+    box-sizing: border-box;
+}
+
+.py .py-centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.py .py-ps-newsletter__content h3 {
+    font-size: 2rem;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.py .py-ps-newsletter__title span {
+    font-size: 3rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.py .py-text-content svg {
+    width: 300px;
+    height: auto;
+}
+ 
+.py .py-jintie h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.py .py-txt-block-title.py-txt-block-title--large.py-text-align--center.py-centered-content h2 {
+    font-weight: 400;
+}
+
+.py .py-section h1 {
+    font-weight: 400;
+}
+
+.py .py-txt-block-title.py-txt-block-title--large.py-text-align--center.py-centered-content {
+    font-size: 30px; 
+}
+
+.py .py-section img {
+    box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2), 0 12px 24px 6px rgba(0, 0, 0, 0.19);
+}
+
+/* 调整.py-section容器尺寸和内边距 */
+.py .py-section {
+    width: 60%; /* 缩小容器宽度（原可能为100%） */
+    margin: 0 auto; /* 水平居中 */
+    padding: 15px; /* 减少内边距（原可能更大） */
+}
+
+/* 减小标题字体大小 */
+.py .py-section h1 {
+    font-size: 1.1rem; /* 原可能为1.5rem左右 */
+    margin: 8px 0; /* 调整标题上下边距 */
+}
+
+/* 减小段落文字大小 */
+.py .py-section .py-b {
+    font-size: 0.9rem; /* 原可能为1rem */
+    line-height: 1.4; /* 保持行高紧凑 */
+}
+
+/* 调整图片尺寸适应容器 */
+.py .py-section img {
+    max-width: 100%; /* 图片宽度随容器缩小 */
+    height: auto; /* 保持宽高比 */
+}
+
+/* 调整作者信息区域文字大小 */
+.py .py-section .py-txt-small .py-p2 {
+    font-size: 0.8rem; /* 原可能为0.9rem */
+}
+
+/* 新增dibu底部定位样式 */
+.py .py-section {
+    position: relative;  /* 为绝对定位建立基准 */
+    padding-bottom: 80px; /* 为底部内容预留空间 */
+}
+
+.py .py-dibu {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.py .py-dibu img {
+    width: 50px;  /* 缩小头像尺寸 */
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.py .py-txt-small {
+    flex: 1;
+    margin-bottom: 0;  /* 移除底部间距 */
+}

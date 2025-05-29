@@ -1,0 +1,230 @@
+.lhl body {
+    font-family: Arial, sans-serif;
+    position: relative;
+    
+}
+
+.lhl .content-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    height: 512px;
+    background-image: url("../img1/30th-anniversary-hub-background-desktop-04-en-02oct24.webp");
+    background-size: contain;
+    user-select: none;
+}
+
+.lhl .content {
+    height: 512px;
+    z-index: 1;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.lhl .button {
+    all: unset;
+    margin:+7px;  
+    display: inline-block;
+    background-color: rgb(0, 112, 204);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    outline:2px solid rgba(0,112,204,0);
+    outline-offset: 1.5px;
+    transition: outline-color 0.2s ease;
+}
+.lhl .button:hover {
+    outline: 2px solid rgba(0,112,204,1);
+}
+
+.lhl .Image {
+    width: 1000px;
+    height: 237px;
+    order: 2;
+}
+
+.lhl .Image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.lhl .background {
+    height: 527px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    background-image: url("../img1/image.png");
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    color: white;
+}
+
+.lhl .background .text {
+    font-size: 24px;
+    line-height: 1.5;
+    margin: 0 auto;
+    text-align: left;
+    padding-right: 40%;
+}
+
+.lhl .a {
+    position: relative;
+    background-color: #26254f;
+    height: 426px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.lhl .text-a {
+    align-self: center;
+    margin-top: 10px;
+    padding: 14px;
+    font-size: 14px;
+    color: black;
+    background-color: white;
+    padding: 10px 24px;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: 600;
+    outline: 2px solid rgba(255, 255, 255, 0); /* 白色，50%透明度 */
+    outline-offset: 2px;            /* 边框与元素的间距 */
+    transition: outline-color 0.1s ease; /* 过渡动画 */
+}
+
+.lhl .text-a:hover {
+    /* border: 2px solid #26254f; */
+    /* box-shadow: 0 0 8px white; */
+    outline-color: rgba(255, 255, 255, 1); /* 悬停时不透明 */
+}
+
+.lhl .a > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.lhl .a .text {
+    font-size: 16px;
+    color: white;
+}
+
+.lhl .text{
+    margin-left: 30px;
+}
+
+.lhl .a img {
+    width: 209px;
+    height: 117px;
+    border-radius: 12px;
+}
+
+.lhl .b {
+    width: 510px;
+    height: 370px;
+    padding-top: 17px;
+    transition: transform 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+
+}
+
+.lhl .b img {
+    width: 450px;
+    height: 238px;
+}
+
+.lhl .b:hover {
+    transform: translateY(-10px);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid grey;
+    border-radius: 12px;
+}
+
+.lhl .c {
+    background-color: #26254f;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 24px;
+}
+
+.lhl h2 {
+    font-size: 35px;
+    font-weight: 200;
+}
+
+.lhl .text-b {
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.lhl h1 {
+    font-weight: 300;
+    font-size: 43px;
+}
+
+.lhl .description .lhl .description-a {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.lhl .description-a {
+    color: rgb(178,178,178);
+}
+
+.lhl .description {
+    color: rgb(107,107,107);
+    margin-bottom: 15px;
+}
+
+.lhl .circle {
+    width: 50px;
+    height: 50px;
+    background-color: #0070cc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.lhl .circle {
+    font-size: 14px;
+    color: black;
+    background-color: white;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-right: 10px;
+    border: 2px solid transparent;
+}
+
+.lhl .circle:hover {
+    border: 2px solid #26254f;
+    box-shadow: 0 0 8px white;
+}
+
+.lhl .left-arrow {
+    left: 10px;
+}
+
+.lhl .right-arrow {
+    right: 10px;
+}
