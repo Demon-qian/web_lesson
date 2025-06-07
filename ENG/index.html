@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中英对话场景可视化展示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .dialog-card {
+            transition: all 0.3s ease;
+        }
+        .dialog-card:hover {
+            transform: translateY(-2px);
+        }
+        .character-badge {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="container mx-auto px-4 py-8 max-w-3xl">
+        <h1 class="text-3xl font-bold text-center mb-8 text-indigo-700">中英对话场景可视化展示</h1>
+        
+        <!-- 博物馆场景 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden mb-12">
+            <div class="bg-indigo-600 px-6 py-4">
+                <h2 class="text-xl font-semibold text-white flex items-center">
+                    <i class="fas fa-landmark mr-3"></i>
+                    博物馆咨询场景对话
+                </h2>
+            </div>
+            
+            <div class="p-6 space-y-6">
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- 对话1 -->
+                    <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                        <div class="flex items-start">
+                            <div class="character-badge bg-indigo-100 text-indigo-600 rounded-full mr-3">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-indigo-600 mb-1">Receptionist</p>
+                                <p class="text-gray-700">Good afternoon. How can I help you?</p>
+                                <p class="text-gray-500 mt-1">接待员：下午好。我能帮您什么？</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 对话2 -->
+                    <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                        <div class="flex items-start">
+                            <div class="character-badge bg-blue-100 text-blue-600 rounded-full mr-3">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-600 mb-1">Jason</p>
+                                <p class="text-gray-700">Could you tell me where the Silk Road exhibition is?</p>
+                                <p class="text-gray-500 mt-1">杰森：您能告诉我丝绸之路展览在哪里吗？</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 对话3 -->
+                    <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                        <div class="flex items-start">
+                            <div class="character-badge bg-indigo-100 text-indigo-600 rounded-full mr-3">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-indigo-600 mb-1">Receptionist</p>
+                                <p class="text-gray-700">It's in Gallery N1. Here's a map of the museum to help you find it.</p>
+                                <p class="text-gray-500 mt-1">接待员：在 N1 展厅。这是博物馆的地图，帮您找地方用的。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 对话4-9 -->
+                    <div class="space-y-4">
+                        <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="character-badge bg-blue-100 text-blue-600 rounded-full mr-3">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-blue-600 mb-1">Jason</p>
+                                    <p class="text-gray-700">Oh, thanks. Can I take photos in the exhibition?</p>
+                                    <p class="text-gray-500 mt-1">杰森：哦，谢谢。我能在展览里拍照吗？</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="character-badge bg-indigo-100 text-indigo-600 rounded-full mr-3">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-indigo-600 mb-1">Receptionist</p>
+                                    <p class="text-gray-700">You can take photos, but you can't use the flash.</p>
+                                    <p class="text-gray-500 mt-1">接待员：您可以拍照，但不能用闪光灯。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="character-badge bg-blue-100 text-blue-600 rounded-full mr-3">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-blue-600 mb-1">Jason</p>
+                                    <p class="text-gray-700">I see. Are there any guided tours for the exhibition?</p>
+                                    <p class="text-gray-500 mt-1">杰森：我明白了。展览有讲解导览吗？</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="character-badge bg-indigo-100 text-indigo-600 rounded-full mr-3">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-indigo-600 mb-1">Receptionist</p>
+                                    <p class="text-gray-700">There's a guided tour every hour. You can get the information from the information board at the entrance of the gallery.</p>
+                                    <p class="text-gray-500 mt-1">接待员：每小时有一场讲解导览。您可以在展厅入口的信息公告牌上看详情。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="character-badge bg-blue-100 text-blue-600 rounded-full mr-3">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-blue-600 mb-1">Jason</p>
+                                    <p class="text-gray-700">Great. Thank you so much.</p>
+                                    <p class="text-gray-500 mt-1">杰森：好的。非常感谢您。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="character-badge bg-indigo-100 text-indigo-600 rounded-full mr-3">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-indigo-600 mb-1">Receptionist</p>
+                                    <p class="text-gray-700">You're welcome. Enjoy your visit!</p>
+                                    <p class="text-gray-500 mt-1">接待员：不客气。祝您参观愉快！</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 朋友对话场景 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="bg-pink-600 px-6 py-4">
+                <h2 class="text-xl font-semibold text-white flex items-center">
+                    <i class="fas fa-users mr-3"></i>
+                    朋友间对话场景
+                </h2>
+            </div>
+            
+            <div class="p-6 space-y-6">
+                <div class="grid grid-cols-1 gap-4">
+                    <!-- 对话1 -->
+                    <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                        <div class="flex items-start">
+                            <div class="character-badge bg-pink-100 text-pink-600 rounded-full mr-3">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-pink-600 mb-1">Lily</p>
+                                <p class="text-gray-700">Wow! What a nice dress! Where did you buy it?</p>
+                                <p class="text-gray-500 mt-1">莉莉：哇！好漂亮的裙子！你在哪买的？</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 对话2 -->
+                    <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                        <div class="flex items-start">
+                            <div class="character-badge bg-purple-100 text-purple-600 rounded-full mr-3">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-purple-600 mb-1">Emma</p>
+                                <p class="text-gray-700">Oh, I didn't need to buy it. It was made by my granny last year.</p>
+                                <p class="text-gray-500 mt-1">艾玛：哦，我没买。这是我奶奶去年做的。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 对话3 -->
+                    <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                        <div class="flex items-start">
+                            <div class="character-badge bg-pink-100 text-pink-600 rounded-full mr-3">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-pink-600 mb-1">Lily</p>
+                                <p class="text-gray-700">Your granny? Is she a tailor?</p>
+                                <p class="text-gray-500 mt-1">莉莉：你奶奶？她是裁缝吗？</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 对话4-10 -->
+                    <div class="space-y-4">
+                        <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="character-badge bg-purple-100 text-purple-600 rounded-full mr-3">
+                                    <i class="fas fa-female"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-purple-600 mb-1">Emma</p>
+                                    <p class="text-gray-700">No, she isn't, but her grandfather was a tailor. She learned the skills from him.</p>
+                                    <p class="text-gray-500 mt-1">艾玛：不是，但她爷爷是裁缝。她跟爷爷学的手艺。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="character-badge bg-pink-100 text-pink-600 rounded-full mr-3">
+                                    <i class="fas fa-female"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-pink-600 mb-1">Lily</p>
+                                    <p class="text-gray-700">The dress is well - designed and quite unique. It is a masterpiece.</p>
+                                    <p class="text-gray-500 mt-1">莉莉：这裙子设计得很好，还特别独特，简直是件杰作。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="character-badge bg-purple-100 text-purple-600 rounded-full mr-3">
+                                    <i class="fas fa-female"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-purple-600 mb-1">Emma</p>
+                                    <p class="text-gray-700">Yes, I admire my granny so much.</p>
+                                    <p class="text-gray-500 mt-1">艾玛：对呀，我可崇拜我奶奶了。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="character-badge bg-pink-100 text-pink-600 rounded-full mr-3">
+                                    <i class="fas fa-female"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-pink-600 mb-1">Lily</p>
+                                    <p class="text-gray-700">What is she like?</p>
+                                    <p class="text-gray-500 mt-1">莉莉：她是个什么样的人呀？</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="character-badge bg-purple-100 text-purple-600 rounded-full mr-3">
+                                    <i class="fas fa-female"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-purple-600 mb-1">Emma</p>
+                                    <p class="text-gray-700">She is a person who is persistent and focuses on details.</p>
+                                    <p class="text-gray-500 mt-1">艾玛：她是个很执着、注重细节的人。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="character-badge bg-pink-100 text-pink-600 rounded-full mr-3">
+                                    <i class="fas fa-female"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-pink-600 mb-1">Lily</p>
+                                    <p class="text-gray-700">And I think she must be very patience. It needs time to make a dress like that.</p>
+                                    <p class="text-gray-500 mt-1">莉莉：而且我觉得她肯定很有耐心，做这样的裙子得花时间呢。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dialog-card bg-gray-50 rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="character-badge bg-purple-100 text-purple-600 rounded-full mr-3">
+                                    <i class="fas fa-female"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-purple-600 mb-1">Emma</p>
+                                    <p class="text-gray-700">She spent 2 weeks making it.</p>
+                                    <p class="text-gray-500 mt-1">艾玛：她做这裙子花了两周时间。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-12 text-center text-sm text-gray-500">
+            <p>网页由问小白生成，仅供参考</p>
+            <p>最后更新时间为2025-06-07 ，星期六</p>
+            <p>问小白网址：wenxiaobai.com</p>
+        </div>
+    </div>
+</body>
+</html>
